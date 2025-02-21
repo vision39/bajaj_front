@@ -34,18 +34,32 @@ const App = () => {
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
-      <h1>BFHL Frontend</h1>
+      <h1>API Input</h1>
       
       {/* JSON Input Text Area */}
       <textarea
         rows="4"
         cols="50"
-        placeholder='Enter JSON: {"data": ["A", "1", "B", "2"]}'
+        placeholder='Enter API: {"data": ["A", "1", "B", "2"]}'
         value={jsonInput}
         onChange={(e) => setJsonInput(e.target.value)}
       />
       <br />
-      <button onClick={handleSubmit}>Submit</button>
+      <button 
+  onClick={handleSubmit} 
+  style={{
+    backgroundColor: "#007BFF",  // Change to any color you like
+    color: "white",
+    padding: "10px 20px",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "16px"
+  }}
+>
+  Submit
+</button>
+
 
       {/* Show dropdown after receiving response */}
       {response && (
@@ -58,7 +72,7 @@ const App = () => {
             options={dropdownOptions}
             onChange={(selected) => setSelectedOptions(selected.map((option) => option.value))}
             placeholder="Select response options..."
-            styles={{ width: "300px", margin: "auto" }}
+            styles={{ width: "100px", margin: "auto" }}
           />
 
           {/* Display selected responses */}
